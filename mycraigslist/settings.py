@@ -83,13 +83,11 @@ WSGI_APPLICATION = 'mycraigslist.wsgi.application'
 #     }
 # }
 import dj_database_url
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         default= 'postgres://gzikypzgxhxacb:a74ab03abf2a5211bc06fd3acf593949ee672280869364e84d6fde87a1ab401e@ec2-54-217-213-79.eu-west-1.compute.amazonaws.com:5432/d74heesdp6k77i'
-#     )
-# }
+DATABASES = {
+    'default': dj_database_url.config(
+        default= 'postgres://gzikypzgxhxacb:a74ab03abf2a5211bc06fd3acf593949ee672280869364e84d6fde87a1ab401e@ec2-54-217-213-79.eu-west-1.compute.amazonaws.com:5432/d74heesdp6k77i'
+    )
+}
 # DATABASES['default'] = dj_database_url.config(
 #     default='HEROKU_POSTGRESQL_MAROON_URL'
 # )
