@@ -25,8 +25,8 @@ SECRET_KEY = 'ffcb123qo0i1wqsmm@mn11h=9k-6#3+1z(436=i703+ysfw(1='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'mycraigslist.herokuapp.com']
 
 # Application definition
 
@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'myapp.apps.MyappConfig',
 ]
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'mycraigslist.urls'
@@ -81,11 +83,13 @@ WSGI_APPLICATION = 'mycraigslist.wsgi.application'
 #     }
 # }
 import dj_database_url
-DATABASES = {
-    'default': dj_database_url.config(
-        default= 'postgres://gzikypzgxhxacb:a74ab03abf2a5211bc06fd3acf593949ee672280869364e84d6fde87a1ab401e@ec2-54-217-213-79.eu-west-1.compute.amazonaws.com:5432/d74heesdp6k77i'
-    )
-}
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default= 'postgres://gzikypzgxhxacb:a74ab03abf2a5211bc06fd3acf593949ee672280869364e84d6fde87a1ab401e@ec2-54-217-213-79.eu-west-1.compute.amazonaws.com:5432/d74heesdp6k77i'
+#     )
+# }
 # DATABASES['default'] = dj_database_url.config(
 #     default='HEROKU_POSTGRESQL_MAROON_URL'
 # )
