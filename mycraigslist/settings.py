@@ -21,9 +21,9 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, "templates")]
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'ffcb123qo0i1wqsmm@mn11h=9k-6#3+1z(436=i703+ysfw(1='
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEYS = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'mycraigslist.wsgi.application'
 import dj_database_url
 DATABASES = {
     'default': dj_database_url.config(
-        default=config('DATABASE_URL')
+        default= HEROKU_POSTGRESQL_MAROON_URL
     )
 }
 
