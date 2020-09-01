@@ -81,11 +81,14 @@ WSGI_APPLICATION = 'mycraigslist.wsgi.application'
 #     }
 # }
 import dj_database_url
-DATABASES = {
-    'default': dj_database_url.config(
-        default= HEROKU_POSTGRESQL_MAROON_URL
-    )
-}
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default= HEROKU_POSTGRESQL_MAROON_URL
+#     )
+# }
+DATABASES['default'] = dj_database_url.config(
+    default='HEROKU_POSTGRESQL_MAROON_URL'
+)
 
 
 # Password validation
