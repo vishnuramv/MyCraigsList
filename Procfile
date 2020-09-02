@@ -1,1 +1,1 @@
-web: gunicorn mycraigslist.wsgi:application
+web: gunicorn mycraigslist.wsgi
