@@ -1,4 +1,3 @@
-asgiref==3.2.10
 beautifulsoup4==4.9.1
 bs4==0.0.1
 certifi==2020.6.20
