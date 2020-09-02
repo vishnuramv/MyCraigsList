@@ -6,6 +6,7 @@ chardet==3.0.4
 dj-database-url==0.5.0
 Django==3.1.1
 django-heroku==0.3.1
+gunicorn==20.0.4
 heroku==0.1.4
 idna==2.10
 psycopg2==2.8.5
@@ -16,3 +17,10 @@ soupsieve==2.0.1
 sqlparse==0.3.1
 urllib3==1.25.10
 whitenoise==5.2.0
+asn1crypto==0.24.0
+cffi==1.12.3
+cryptography==2.7
+pycparser==2.19
+pyOpenSSL==19.0.0
+PySocks==1.7.0
+six==1.12.0
