@@ -76,18 +76,18 @@ WSGI_APPLICATION = 'mycraigslist.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-import dj_database_url
 DATABASES = {
-    'default': dj_database_url.config(
-        default= 'postgres://gzikypzgxhxacb:a74ab03abf2a5211bc06fd3acf593949ee672280869364e84d6fde87a1ab401e@ec2-54-217-213-79.eu-west-1.compute.amazonaws.com:5432/d74heesdp6k77i'
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+# import dj_database_url
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default= 'postgres://gzikypzgxhxacb:a74ab03abf2a5211bc06fd3acf593949ee672280869364e84d6fde87a1ab401e@ec2-54-217-213-79.eu-west-1.compute.amazonaws.com:5432/d74heesdp6k77i'
+#     )
+# }
 # DATABASES['default'] = dj_database_url.config(
 #     default='HEROKU_POSTGRESQL_MAROON_URL'
 # )
